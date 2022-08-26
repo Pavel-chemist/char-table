@@ -1,11 +1,21 @@
-// use std::io;
-
 fn main() {
+    println!("CHARACTER TABLE:");
 
-    // let a: u8 = 100;
+    print_char_table();    
 
-    for i in 0..255 {
-        println!("Char with code {} is {}", i, i as u8 as char);
+    println!("");
+}
+
+fn print_char_table () {
+    for i in 8..32 {
+        println!("");
+
+        for a in (i*4)..((i+1)*4) {
+            if a < 100 {
+                print!(" {}  : {} \t|", a, a as u8 as char);
+            } else {
+                print!(" {} : {} \t|", a, a as u8 as char);
+            }
+        }        
     }
-    
 }
