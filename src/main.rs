@@ -7,15 +7,24 @@ fn main() {
 }
 
 fn print_char_table () {
-    for i in 8..32 {
-        println!("");
+    let mut a: u8;
+    for j in 0..16 {
+        for i in 0..8 {
 
-        for a in (i*4)..((i+1)*4) {
-            if a < 100 {
-                print!(" {}  : {} \t|", a, a as u8 as char);
+            a = i * 16 + j;
+
+            if a < 10 {
+                print!(" {}   : {} \t|", a, 26 as char);
+            } else if a < 32 {
+                print!(" {}  : {} \t|", a, 26 as char);
+            } else if a < 100 {
+                print!(" {}  : {} \t|", a, a as char);
+            } else if a < 128 {
+                print!(" {} : {} \t|", a, a as char);
             } else {
-                print!(" {} : {} \t|", a, a as u8 as char);
+                print!(" {} : {} \t|", a, 26 as char);
             }
-        }        
+        }
+        println!("");
     }
 }
